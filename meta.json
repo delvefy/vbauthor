@@ -1,0 +1,63 @@
+{
+  "site": {
+    "title": "Victor Black",
+    "description": "Victor Black — Author of Dark Fantasy"
+  },
+  "sections": [
+    {
+      "id": "author",
+      "elements": [
+        {
+          "id": "victor-black",
+          "type": "card",
+          "title": "Victor Black",
+          "image": "img/avatarvictor.png",
+          "text": "Victor Black is an author of dark fantasy and speculative fiction. Crafting worlds that blur the line between the sublime and the sinister, his stories pull readers into realms of wonder and shadow. Each tale is a descent into the extraordinary — where heroes and monsters are often one and the same, and the truth is always darker than it seems."
+        }
+      ]
+    },
+    {
+      "id": "works",
+      "elements": [
+        {
+          "id": "111",
+          "type": "card",
+          "title": "111",
+          "subtitle": "Ongoing Novel",
+          "image": "img/111.png",
+          "text": "An ongoing novel at the edge of genre and imagination. 111 follows a protagonist caught between dying worlds, uncovering truths that rewrite everything they believed. New chapters released regularly — follow the journey as it unfolds."
+        },
+        {
+          "id": "sky-pillar",
+          "type": "card",
+          "title": "Sky Pillar",
+          "subtitle": "A Novella",
+          "image": "img/skypillar.png",
+          "text": "In a world where ancient towers pierce the heavens and those who climb them return forever changed, one young scholar dares to seek the summit. Sky Pillar is a haunting novella of ambition, sacrifice, and the terrible price of ascending beyond one's station."
+        }
+      ]
+    },
+    {
+      "id": "patreon",
+      "elements": [
+        {
+          "id": "patreon",
+          "type": "thumbnail",
+          "title": "Support on Patreon",
+          "platform": "patreon",
+          "url": "https://www.patreon.com/Delvefy"
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "elements": [
+        { "id": "facebook",  "type": "thumbnail", "title": "Facebook",  "platform": "facebook",  "url": "https://www.facebook.com/delvefy/" },
+        { "id": "instagram", "type": "thumbnail", "title": "Instagram", "platform": "instagram", "url": "https://www.instagram.com/victor.black.writer/" },
+        { "id": "twitter",   "type": "thumbnail", "title": "Twitter",   "platform": "twitter",   "url": "https://x.com/delvefy" },
+        { "id": "reddit",    "type": "thumbnail", "title": "Reddit",    "platform": "reddit",    "url": "https://www.reddit.com/user/captain-self-evident/" },
+        { "id": "linkedin",  "type": "thumbnail", "title": "LinkedIn",  "platform": "linkedin",  "url": "https://www.linkedin.com/company/victor-black" }
+      ]
+    }
+  ]
+}
