@@ -271,21 +271,15 @@
       padding-top: 0.1rem;
     }
 
-    /* ── Status badge (pill) ────────────────────── */
+    /* ── Work subtitle ──────────────────────────── */
     .work-badge {
-      display: inline-flex;
-      align-items: center;
-      align-self: flex-start;
-      padding: 0.2rem 0.7rem;
-      border: 1px solid var(--teal);
-      border-radius: 999px;
       font-family: 'Cinzel', serif;
       font-size: 0.6rem;
       font-weight: 400;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 0.6rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
     }
 
     .work-title {
@@ -297,16 +291,6 @@
       text-transform: none;
       line-height: 1.1;
       margin-bottom: 0.65rem;
-    }
-
-    .work-quote {
-      border-left: 2px solid var(--border);
-      padding-left: 0.85rem;
-      margin-bottom: 0.1rem;
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.65;
-      color: var(--text-body);
     }
 
     .work-text {
@@ -521,13 +505,7 @@
     function renderWorks(elements) {
       const imgAttr = `onerror="this.closest('.work-cover')?.remove()"`;
       return elements.map(el => {
-        // Detect if text looks like a quote (starts/ends with ")
-        const isQuote = el.text && (el.text.trim().startsWith('\u201c') || el.text.trim().startsWith('"'));
-        const textHtml = el.text
-          ? isQuote
-            ? `<blockquote class="work-quote">${esc(el.text)}</blockquote>`
-            : `<p class="work-text">${esc(el.text)}</p>`
-          : '';
+        const textHtml = el.text ? `<p class="work-text">${esc(el.text)}</p>` : '';
         return `
 <div class="work-item">
   ${el.image ? `<div class="work-cover"><img src="${esc(el.image)}" alt="${esc(el.title)}" ${imgAttr}></div>` : ''}
