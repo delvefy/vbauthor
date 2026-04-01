@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="5" fill="#0b0a0a"/>
+
+  <!-- Left page (slight perspective lean) -->
+  <path d="M2 10 L15 8 L15 26 L2 26 Z" fill="#161515" stroke="#2dd4bf" stroke-width="0.8"/>
+
+  <!-- Right page (mirror lean) -->
+  <path d="M17 8 L30 10 L30 26 L17 26 Z" fill="#161515" stroke="#2dd4bf" stroke-width="0.8"/>
+
+  <!-- Spine highlight -->
+  <line x1="16" y1="8" x2="16" y2="26" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Bottom binding curve -->
+  <path d="M2 26 Q16 28.5 30 26" stroke="#2dd4bf" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+
+  <!-- V initial — left page, teal -->
+  <text x="8.5" y="22"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="13" font-weight="700"
+        fill="#2dd4bf" text-anchor="middle"
+        letter-spacing="-0.5">V</text>
+
+  <!-- B initial — right page, violet -->
+  <text x="23.5" y="22"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="13" font-weight="700"
+        fill="#a78bfa" text-anchor="middle"
+        letter-spacing="-0.5">B</text>
+</svg>
