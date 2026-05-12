@@ -69,7 +69,7 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-muted);
-      padding: 0.8rem 0.85rem;
+      padding: 0.8rem 0.6rem;
       border: none;
       background: none;
       cursor: pointer;
@@ -284,20 +284,34 @@
 
     /* ── Work category ──────────────────────────── */
     .work-category {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       font-family: 'Cinzel', serif;
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text);
+      scroll-margin-top: 3.5rem;
     }
 
+    .work-category::before,
+    .work-category::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .work-category span { padding-left: 0.3em; }
+
     .work-category:not(:first-child) {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
     .work-category + .work-item {
-      padding-top: 1rem;
+      padding-top: 1.5rem;
     }
 
     .work-title {
@@ -472,9 +486,10 @@
 <body>
   <nav id="site-nav" aria-label="Page navigation">
     <div class="nav-inner">
-      <button class="nav-btn" data-nav="author"  onclick="navScrollTo('author')">Author</button>
-      <button class="nav-btn" data-nav="works"   onclick="navScrollTo('works')">Works</button>
-      <button class="nav-btn" data-nav="contact" onclick="navScrollTo('contact')">Contact &amp; Support</button>
+      <button class="nav-btn" data-nav="author"    onclick="navScrollTo('author')">Author</button>
+      <button class="nav-btn" data-nav="ongoing"   onclick="navScrollTo('ongoing')">Ongoing</button>
+      <button class="nav-btn" data-nav="completed" onclick="navScrollTo('completed')">Completed</button>
+      <button class="nav-btn" data-nav="contact"   onclick="navScrollTo('contact')">Contact &amp; Support</button>
     </div>
   </nav>
 
@@ -497,7 +512,7 @@
       </section>
 
       <section class="page-section" id="section-works">
-        <h3 class="work-category">Ongoing</h3>
+        <h3 class="work-category" id="cat-ongoing"><span>Ongoing</span></h3>
         <div class="work-item">
           <div class="work-cover">
             <img src="img/blaze2.jpg" alt="Blaze" onerror="this.closest('.work-cover')?.remove()">
@@ -522,7 +537,7 @@
             <img class="read-btn-icon" src="https://www.royalroad.com/favicon.ico" alt="Royal Road">Read
           </a>
         </div>
-        <h3 class="work-category">Completed</h3>
+        <h3 class="work-category" id="cat-completed"><span>Completed</span></h3>
         <div class="work-item">
           <div class="work-cover">
             <img src="img/skypillar.jpg" alt="Sky Pillar" onerror="this.closest('.work-cover')?.remove()">
@@ -583,9 +598,10 @@
   <script>
     /* ── Nav ────────────────────────────────────── */
     const NAV_MAP = {
-      author:     ['section-author'],
-      works:      ['section-works'],
-      contact:    ['section-newsletter', 'section-patreon', 'section-social'],
+      author:    ['section-author'],
+      ongoing:   ['cat-ongoing'],
+      completed: ['cat-completed'],
+      contact:   ['section-newsletter', 'section-patreon', 'section-social'],
     };
 
     function navScrollTo(key) {
