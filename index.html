@@ -285,19 +285,28 @@
     /* ── Work category ──────────────────────────── */
     .work-category {
       font-family: 'Cinzel', serif;
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.22em;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text);
+      text-align: center;
+      padding: 1.15rem 0;
+      border-top: 1px solid var(--border-hi);
+      border-bottom: 1px solid var(--border-hi);
     }
 
     .work-category:not(:first-child) {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Avoid double line where a work-item border meets the category border */
+    .work-item:has(+ .work-category) {
+      border-bottom: none;
     }
 
     .work-category + .work-item {
-      padding-top: 1rem;
+      padding-top: 1.75rem;
     }
 
     .work-title {
