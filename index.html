@@ -262,6 +262,11 @@
     .work-item:first-child { padding-top: 0; }
     .work-item:last-child  { border-bottom: none; padding-bottom: 0; }
 
+    .work-item--no-cover { grid-template-columns: 1fr; }
+    .work-item--no-cover .work-header,
+    .work-item--no-cover .work-text,
+    .work-item--no-cover .read-btn { grid-column: 1; }
+
     .work-cover {
       grid-column: 1;
       grid-row: 1;
@@ -473,6 +478,11 @@
       .work-text   { grid-column: 2; grid-row: 2; }
       .read-btn    { grid-column: 2; grid-row: 3; justify-self: start; }
 
+      .work-item--no-cover { grid-template-columns: 1fr; }
+      .work-item--no-cover .work-header,
+      .work-item--no-cover .work-text,
+      .work-item--no-cover .read-btn { grid-column: 1; }
+
       .work-title  { font-size: 2.4rem; }
       .author-name { font-size: 2.4rem; }
     }
@@ -482,6 +492,7 @@
   <nav id="site-nav" aria-label="Page navigation">
     <div class="nav-inner">
       <button class="nav-btn" data-nav="author"    onclick="navScrollTo('author')">Author</button>
+      <button class="nav-btn" data-nav="limitless" onclick="navScrollTo('limitless')">Limitless</button>
       <button class="nav-btn" data-nav="ongoing"   onclick="navScrollTo('ongoing')">Ongoing</button>
       <button class="nav-btn" data-nav="completed" onclick="navScrollTo('completed')">Completed</button>
       <button class="nav-btn" data-nav="contact"   onclick="navScrollTo('contact')">Contact &amp; Support</button>
@@ -507,6 +518,14 @@
       </section>
 
       <section class="page-section" id="section-works">
+        <h3 class="work-category" id="category-limitless">Limitless Journey</h3>
+        <div class="work-item work-item--no-cover">
+          <div class="work-header">
+            <h2 class="work-title">Limitless Journey</h2>
+          </div>
+          <p class="work-text">An interactive journey beyond the page — step into Victor Black's worlds in a new way.</p>
+          <a class="read-btn" href="http://journey.victorblackauthor.com/" target="_blank" rel="noopener noreferrer">Visit</a>
+        </div>
         <h3 class="work-category" id="category-ongoing">Ongoing</h3>
         <div class="work-item">
           <div class="work-cover">
@@ -594,6 +613,7 @@
     /* ── Nav ────────────────────────────────────── */
     const NAV_MAP = {
       author:    ['section-author'],
+      limitless: ['category-limitless'],
       ongoing:   ['category-ongoing'],
       completed: ['category-completed'],
       contact:   ['section-newsletter', 'section-patreon', 'section-social'],
