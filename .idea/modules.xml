@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../journey/.idea/journey.iml" filepath="$PROJECT_DIR$/../journey/.idea/journey.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/vbauthor.iml" filepath="$PROJECT_DIR$/.idea/vbauthor.iml" />
     </modules>
   </component>
