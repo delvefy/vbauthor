@@ -47,8 +47,10 @@
       left: 0;
       right: 0;
       z-index: 100;
-      display: flex;
-      justify-content: center;
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
       padding: 0 1.25rem;
       background: rgba(11, 10, 10, 0.88);
       backdrop-filter: blur(14px);
@@ -56,11 +58,14 @@
       border-bottom: 1px solid var(--border);
     }
 
+    #site-nav::-webkit-scrollbar { display: none; }
+
     .nav-inner {
       display: flex;
       gap: 0.1rem;
       max-width: 640px;
-      width: 100%;
+      width: max-content;
+      margin: 0 auto;
     }
 
     .nav-btn {
@@ -360,8 +365,8 @@
       flex-shrink: 0;
     }
 
-    /* ── Road CTA ───────────────────────────────── */
-    .road-cta {
+    /* ── Journey CTA (Riddle-Hoard) ─────────────── */
+    .journey-cta {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -369,7 +374,7 @@
       padding: 2.25rem 0 1rem;
     }
 
-    .road-desc {
+    .journey-desc {
       font-family: 'Crimson Text', Georgia, serif;
       font-size: 1.1rem;
       line-height: 1.75;
@@ -379,19 +384,19 @@
       margin: 0 auto 1.85rem;
     }
 
-    .road-btn {
+    .journey-btn {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.7rem;
       padding: 1.15rem 2.6rem;
-      border: 1px solid rgba(45, 212, 191, 0.45);
+      border: 1px solid rgba(167, 139, 250, 0.45);
       border-radius: var(--radius);
       background:
-        radial-gradient(circle at 50% 130%, rgba(167, 139, 250, 0.18), transparent 65%),
-        linear-gradient(180deg, rgba(45, 212, 191, 0.08), rgba(45, 212, 191, 0.02));
-      color: var(--teal);
+        radial-gradient(circle at 50% 130%, rgba(45, 212, 191, 0.16), transparent 65%),
+        linear-gradient(180deg, rgba(167, 139, 250, 0.08), rgba(167, 139, 250, 0.02));
+      color: var(--violet);
       font-family: 'Cinzel', serif;
       font-size: 0.92rem;
       letter-spacing: 0.28em;
@@ -400,47 +405,47 @@
       transition: color 250ms, border-color 250ms, transform 250ms, box-shadow 350ms, background 350ms;
       overflow: hidden;
       isolation: isolate;
-      animation: roadPulse 3.4s ease-in-out infinite;
+      animation: journeyPulse 3.4s ease-in-out infinite;
     }
 
-    .road-btn::before {
+    .journey-btn::before {
       content: '';
       position: absolute;
       inset: -1px;
       z-index: -1;
-      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(45, 212, 191, 0.28), transparent 55%);
+      background: radial-gradient(circle at 50% 50%, rgba(167, 139, 250, 0.28), transparent 55%);
       opacity: 0;
       transition: opacity 350ms;
     }
 
-    .road-btn:hover {
+    .journey-btn:hover {
       color: var(--text);
-      border-color: var(--teal);
+      border-color: var(--violet);
       transform: translateY(-1px);
       box-shadow:
-        0 0 28px rgba(45, 212, 191, 0.28),
-        inset 0 0 18px rgba(45, 212, 191, 0.10);
+        0 0 28px rgba(167, 139, 250, 0.28),
+        inset 0 0 18px rgba(167, 139, 250, 0.10);
       animation: none;
     }
 
-    .road-btn:hover::before { opacity: 1; }
+    .journey-btn:hover::before { opacity: 1; }
 
-    .road-btn:active { transform: translateY(0); }
+    .journey-btn:active { transform: translateY(0); }
 
-    .road-btn-arrow {
+    .journey-btn-arrow {
       display: inline-block;
       transition: transform 250ms;
     }
 
-    .road-btn:hover .road-btn-arrow { transform: translateX(6px); }
+    .journey-btn:hover .journey-btn-arrow { transform: translateX(6px); }
 
-    @keyframes roadPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
-      50%      { box-shadow: 0 0 22px 0 rgba(45, 212, 191, 0.22); }
+    @keyframes journeyPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(167, 139, 250, 0); }
+      50%      { box-shadow: 0 0 22px 0 rgba(167, 139, 250, 0.22); }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .road-btn { animation: none; }
+      .journey-btn { animation: none; }
     }
 
     /* ── Patreon CTA ────────────────────────────── */
@@ -564,8 +569,8 @@
       .work-title  { font-size: 2.4rem; }
       .author-name { font-size: 2.4rem; }
 
-      .road-btn { font-size: 1rem; padding: 1.25rem 3rem; }
-      .road-desc { font-size: 1.15rem; }
+      .journey-btn { font-size: 1rem; padding: 1.25rem 3rem; }
+      .journey-desc { font-size: 1.15rem; }
     }
   </style>
 </head>
@@ -575,7 +580,7 @@
       <button class="nav-btn" data-nav="author"    onclick="navScrollTo('author')">Author</button>
       <button class="nav-btn" data-nav="ongoing"   onclick="navScrollTo('ongoing')">Ongoing</button>
       <button class="nav-btn" data-nav="completed" onclick="navScrollTo('completed')">Completed</button>
-      <button class="nav-btn" data-nav="road"    onclick="navScrollTo('road')">The Road</button>
+      <button class="nav-btn" data-nav="journey"   onclick="navScrollTo('journey')">The Hoard</button>
       <button class="nav-btn" data-nav="contact"   onclick="navScrollTo('contact')">Contact &amp; Support</button>
     </div>
   </nav>
@@ -625,12 +630,12 @@
             <img class="read-btn-icon" src="https://www.amazon.com/favicon.ico" alt="Amazon">Read
           </a>
         </div>
-        <h3 class="work-category" id="category-road">The Road</h3>
-        <div class="road-cta">
-          <p class="road-desc">An experiment: leap from one soul to another, then another, then another — counting every road that ties them together.<br>How far does the chain run? Only one way to find out.</p>
-          <a class="road-btn" href="http://journey.victorblackauthor.com/" target="_blank" rel="noopener noreferrer">
-            <span class="road-btn-label">Walk the Road</span>
-            <span class="road-btn-arrow" aria-hidden="true">→</span>
+        <h3 class="work-category" id="category-journey">The Riddle-Hoard</h3>
+        <div class="journey-cta">
+          <p class="journey-desc">A labyrinth of rooms, each one sealed by a riddle. Every door is a single word — the answer that lets you through.<br>Speak the name, and the way opens.</p>
+          <a class="journey-btn" href="http://journey.victorblackauthor.com/" target="_blank" rel="noopener noreferrer">
+            <span class="journey-btn-label">Enter the Hoard</span>
+            <span class="journey-btn-arrow" aria-hidden="true">→</span>
           </a>
         </div>
       </section>
@@ -684,7 +689,7 @@
       author:    ['section-author'],
       ongoing:   ['category-ongoing'],
       completed: ['category-completed'],
-      road:    ['category-road'],
+      journey: ['category-journey'],
       contact:   ['section-newsletter', 'section-patreon', 'section-social'],
     };
 
