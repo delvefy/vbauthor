@@ -465,6 +465,19 @@
       margin-bottom: 0.75rem;
     }
 
+    .newsletter-desc {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Kit embed overrides */
+    #newsletter-embed .formkit-form { background: transparent !important; border: none !important; padding: 0 !important; }
+    #newsletter-embed .formkit-field input { background: var(--surface-2) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; color: var(--text) !important; font-family: 'Crimson Text', Georgia, serif !important; font-size: 1rem !important; }
+    #newsletter-embed .formkit-field input::placeholder { color: var(--text-muted) !important; }
+    #newsletter-embed .formkit-submit, #newsletter-embed [data-element="submit"] button { background: var(--teal-dim) !important; border: 1px solid rgba(45,212,191,0.3) !important; color: var(--teal) !important; font-family: 'Cinzel', serif !important; font-size: 0.62rem !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; border-radius: var(--radius) !important; }
+    #newsletter-embed .formkit-powered-by-convertkit-container { display: none !important; }
+
     /* ── Focus ──────────────────────────────────── */
     :focus-visible {
       outline: 1px solid var(--teal);
@@ -571,6 +584,14 @@
         </div>
       </section>
 
+      <section class="page-section" id="section-newsletter">
+        <p class="newsletter-label">Newsletter</p>
+        <p class="newsletter-desc">Stay updated on new releases, chapters, and behind-the-scenes writing news.</p>
+        <div id="newsletter-embed">
+          <script async data-uid="1c1bdadb38" src="https://victor-black.kit.com/1c1bdadb38/index.js"></script>
+        </div>
+      </section>
+
       <section class="page-section" id="section-patreon">
         <a class="patreon-cta" href="https://www.patreon.com/Delvefy" target="_blank" rel="noopener noreferrer">
           <div class="patreon-left">
@@ -616,7 +637,7 @@
       author:    ['section-author'],
       ongoing:   ['category-ongoing'],
       completed: ['category-completed'],
-      contact:   ['section-patreon', 'section-contact'],
+      contact:   ['section-newsletter', 'section-patreon', 'section-contact'],
     };
 
     function navScrollTo(key) {
