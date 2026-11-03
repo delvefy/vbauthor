@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPCEtLSBCYWNrZ3JvdW5kIC0tPgogIDxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgcng9IjUiIGZpbGw9IiMwYjBhMGEiLz4KCiAgPCEtLSBMZWZ0IHBhZ2UgKHNsaWdodCBwZXJzcGVjdGl2ZSBsZWFuKSAtLT4KICA8cGF0aCBkPSJNMiAxMCBMMTUgOCBMMTUgMjYgTDIgMjYgWiIgZmlsbD0iIzE2MTUxNSIgc3Ryb2tlPSIjMmRkNGJmIiBzdHJva2Utd2lkdGg9IjAuOCIvPgoKICA8IS0tIFJpZ2h0IHBhZ2UgKG1pcnJvciBsZWFuKSAtLT4KICA8cGF0aCBkPSJNMTcgOCBMMzAgMTAgTDMwIDI2IEwxNyAyNiBaIiBmaWxsPSIjMTYxNTE1IiBzdHJva2U9IiMyZGQ0YmYiIHN0cm9rZS13aWR0aD0iMC44Ii8+CgogIDwhLS0gU3BpbmUgaGlnaGxpZ2h0IC0tPgogIDxsaW5lIHgxPSIxNiIgeTE9IjgiIHgyPSIxNiIgeTI9IjI2IiBzdHJva2U9IiMyZGQ0YmYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KCiAgPCEtLSBCb3R0b20gYmluZGluZyBjdXJ2ZSAtLT4KICA8cGF0aCBkPSJNMiAyNiBRMTYgMjguNSAzMCAyNiIgc3Ryb2tlPSIjMmRkNGJmIiBzdHJva2Utd2lkdGg9IjAuOCIgZmlsbD0ibm9uZSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CgogIDwhLS0gViBpbml0aWFsIOKAlCBsZWZ0IHBhZ2UsIHRlYWwgLS0+CiAgPHRleHQgeD0iOC41IiB5PSIyMiIKICAgICAgICBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI3MDAiCiAgICAgICAgZmlsbD0iIzJkZDRiZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgICAgICBsZXR0ZXItc3BhY2luZz0iLTAuNSI+VjwvdGV4dD4KCiAgPCEtLSBCIGluaXRpYWwg4oCUIHJpZ2h0IHBhZ2UsIHZpb2xldCAtLT4KICA8dGV4dCB4PSIyMy41IiB5PSIyMiIKICAgICAgICBmb250LWZhbWlseT0iR2VvcmdpYSwgJ1RpbWVzIE5ldyBSb21hbicsIHNlcmlmIgogICAgICAgIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSI3MDAiCiAgICAgICAgZmlsbD0iI2E3OGJmYSIgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgICAgICBsZXR0ZXItc3BhY2luZz0iLTAuNSI+QjwvdGV4dD4KPC9zdmc+Cg==">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* ── Reset ──────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,7 +55,6 @@
       background: rgba(11, 10, 10, 0.88);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
     }
 
     #site-nav::-webkit-scrollbar { display: none; }
@@ -69,19 +68,18 @@
     }
 
     .nav-btn {
-      font-family: 'Cinzel', serif;
-      font-size: 0.58rem;
-      letter-spacing: 0.18em;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted);
-      padding: 0.8rem 0.85rem;
+      padding: 0.85rem 1.2rem;
       border: none;
       background: none;
       cursor: pointer;
       border-radius: 0;
       transition: color 150ms;
-      border-bottom: 1px solid transparent;
-      margin-bottom: -1px;
       white-space: nowrap;
     }
 
@@ -91,15 +89,14 @@
 
     .nav-btn.active {
       color: var(--teal);
-      border-bottom-color: var(--teal);
     }
 
     body {
       background: var(--bg);
       color: var(--text-body);
-      font-family: 'Crimson Text', Georgia, serif;
-      font-size: 1.1rem;
-      line-height: 1.75;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
       min-height: 100dvh;
     }
 
@@ -143,7 +140,6 @@
       display: flex;
       flex-direction: column;
       padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
       animation: fadeIn 400ms ease both;
     }
 
@@ -152,13 +148,8 @@
       padding-bottom: 1.25rem;
     }
 
-    /* The Ongoing heading's own bright top border serves as the divider here,
-       so drop the author section's dim divider and tighten the gap to match Completed */
-    #section-author { border-bottom: none; }
-    #section-works  { padding-top: 0.75rem; }
 
     .page-section:first-child { padding-top: 0; }
-    .page-section:last-child  { border-bottom: none; }
 
     .page-section:nth-child(2) { animation-delay: 80ms; }
     .page-section:nth-child(3) { animation-delay: 160ms; }
@@ -201,16 +192,17 @@
     .author-text { width: 100%; }
 
     .author-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 0.35rem;
     }
 
     .author-name {
-      font-family: 'Crimson Text', Georgia, serif;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
       font-size: 2rem;
       font-weight: 600;
       color: var(--text);
@@ -270,9 +262,10 @@
     }
 
     .contact-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text);
     }
@@ -348,28 +341,22 @@
 
     /* ── Work category ──────────────────────────── */
     .work-category {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text);
+      color: var(--teal);
       text-align: center;
-      padding: 1.15rem 0;
-      border-top: 1px solid var(--border-hi);
-      border-bottom: 1px solid var(--border-hi);
-    }
-
-    .work-category {
       margin-bottom: 1.5rem;
     }
 
     .work-category:not(:first-child) {
-      margin-top: 1.5rem;
+      margin-top: 3rem;
     }
 
     .work-title {
-      font-family: 'Crimson Text', Georgia, serif;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
       font-size: 2.1rem;
       font-weight: 600;
       color: var(--text);
@@ -396,9 +383,10 @@
       border-radius: 6px;
       background: var(--surface-2);
       color: var(--text);
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.16em;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: background 150ms, border-color 150ms;
     }
@@ -422,11 +410,12 @@
 
     /* ── Section label ──────────────────────────── */
     .newsletter-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
+      font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--text);
       margin-bottom: 0.75rem;
     }
 
@@ -438,9 +427,9 @@
 
     /* Kit embed overrides */
     #newsletter-embed .formkit-form { background: transparent !important; border: none !important; padding: 0 !important; }
-    #newsletter-embed .formkit-field input { background: var(--surface-2) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; color: var(--text) !important; font-family: 'Crimson Text', Georgia, serif !important; font-size: 1rem !important; }
+    #newsletter-embed .formkit-field input { background: var(--surface-2) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; color: var(--text) !important; font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif !important; font-size: 1rem !important; }
     #newsletter-embed .formkit-field input::placeholder { color: var(--text-muted) !important; }
-    #newsletter-embed .formkit-submit, #newsletter-embed [data-element="submit"] button { background: var(--teal-dim) !important; border: 1px solid rgba(45,212,191,0.3) !important; color: var(--teal) !important; font-family: 'Cinzel', serif !important; font-size: 0.62rem !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; border-radius: var(--radius) !important; }
+    #newsletter-embed .formkit-submit, #newsletter-embed [data-element="submit"] button { background: var(--teal-dim) !important; border: 1px solid rgba(45,212,191,0.3) !important; color: var(--teal) !important; font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif !important; font-size: 0.8rem !important; font-weight: 600 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; border-radius: var(--radius) !important; }
     #newsletter-embed .formkit-powered-by-convertkit-container { display: none !important; }
 
     /* ── Focus ──────────────────────────────────── */
@@ -469,8 +458,8 @@
         justify-content: center;
         text-align: center;
         padding: 0.6rem 0.2rem;
-        font-size: clamp(0.5rem, 2.5vw, 0.58rem);
-        letter-spacing: 0.04em;
+        font-size: clamp(0.7rem, 3.4vw, 0.82rem);
+        letter-spacing: 0.06em;
         line-height: 1.25;
         white-space: normal;
         overflow-wrap: break-word;
@@ -517,7 +506,7 @@
       <button class="nav-btn" data-nav="author"    onclick="navScrollTo('author')">Author</button>
       <button class="nav-btn" data-nav="ongoing"   onclick="navScrollTo('ongoing')">Ongoing</button>
       <button class="nav-btn" data-nav="completed" onclick="navScrollTo('completed')">Completed</button>
-      <button class="nav-btn" data-nav="contact"   onclick="navScrollTo('contact')">Contact &amp; Support</button>
+      <button class="nav-btn" data-nav="contact"   onclick="navScrollTo('contact')">Contact</button>
     </div>
   </nav>
 
@@ -535,7 +524,7 @@
               <h1 class="author-name">Victor Black</h1>
             </div>
           </div>
-          <p class="author-text">Victor Black writes progression fantasy, plus whatever else his imagination drags home.</p>
+          <p class="author-text">Victor Black writes progression fantasy about unlikely protagonists who refuse to stay small. He’s drawn to the long game: power that’s earned slowly, stories that span ages, and characters who keep going when they should have quit. When he’s not cultivating, he writes whatever else his imagination drags home.</p>
         </div>
       </section>
 
@@ -605,15 +594,6 @@
       <section class="page-section" id="section-contact">
         <p class="newsletter-label">Get in touch</p>
         <div class="contact-grid">
-          <a class="contact-card email" href="mailto:contact@victorblackauthor.com">
-            <span class="contact-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </span>
-            <span class="contact-text">
-              <span class="contact-label">Email</span>
-              <span class="contact-value">contact@victorblackauthor.com</span>
-            </span>
-          </a>
           <a class="contact-card reddit" href="https://www.reddit.com/r/victorblack/" target="_blank" rel="noopener noreferrer">
             <span class="contact-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
@@ -621,6 +601,15 @@
             <span class="contact-text">
               <span class="contact-label">Reddit</span>
               <span class="contact-value">r/victorblack</span>
+            </span>
+          </a>
+          <a class="contact-card email" href="mailto:contact@victorblackauthor.com">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </span>
+            <span class="contact-text">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">contact@victorblackauthor.com</span>
             </span>
           </a>
         </div>
